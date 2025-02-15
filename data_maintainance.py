@@ -3,75 +3,98 @@ import time
 import threading
 from datetime import datetime
 
-# 初始化数据列
+# 定义数据列
 data_columns = ["meter_id", "time", "reading"]
 
-# 尝试读取 `local_db.csv`，如果不存在，则创建一个空的 DataFrame
+# 文件路径
+LOCAL_DB_FILE = "local_db.csv"
+DAILY_USAGE_FILE = "daily_usage.csv"
+
+# **读取 `local_db.csv`（如果文件不存在，则创建）**
 try:
-    local_db = pd.read_csv("local_db.csv")
+    local_db = pd.read_csv(LOCAL_DB_FILE)
 except FileNotFoundError:
     local_db = pd.DataFrame(columns=data_columns)
-    local_db.to_csv("local_db.csv", index=False)
+    local_db.to_csv(LOCAL_DB_FILE, index=False)
 
-# 临时存储 `data_store`，用于存放当天的 `meter_reading`
-data_store = pd.DataFrame(columns=data_columns)
-
-# **加载本地数据库数据**
-def load_local_db():
-    global data_store
+# **加载 `meter_reading.py` 里的数据**
+def load_data_store():
     try:
-        data_store = pd.read_csv("local_db.csv")
-        print("Local DB loaded successfully.")
+        return pd.read_csv(LOCAL_DB_FILE)
     except FileNotFoundError:
-        print(" No existing local DB found, starting fresh.")
-        data_store = pd.DataFrame(columns=data_columns)
+        return pd.DataFrame(columns=data_columns)
 
-# **将 `data_store` 数据存入 `local_db.csv`**
-def save_data_to_csv():
-    global data_store, local_db
+# **计算当天总用电量**
+def calculate_daily_usage(data_store):
+    if data_store.empty:
+        print("No data available for daily usage calculation.")
+        return
 
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f" [{timestamp}] Saving data to local_db.csv...")
+    data_store["time"] = pd.to_datetime(data_store["time"])
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    today_data = data_store[data_store["time"].dt.strftime("%Y-%m-%d") == today_str]
+
+    if today_data.empty:
+        print("No records found for today.")
+        return
+
+    daily_usage = today_data.groupby("meter_id")["reading"].sum().reset_index()
+    daily_usage["date"] = today_str
 
     try:
-        # 读取 `local_db.csv`
-        local_db = pd.read_csv("local_db.csv")
+        try:
+            daily_db = pd.read_csv(DAILY_USAGE_FILE)
+        except FileNotFoundError:
+            daily_db = pd.DataFrame(columns=["meter_id", "date", "reading"])
 
-        # **合并 `data_store` 到 `local_db`**
-        combined_db = pd.concat([local_db, data_store], ignore_index=True)
-
-        # **写入 CSV**
-        combined_db.to_csv("local_db.csv", index=False)
-        print(f" Data saved successfully! Total records: {len(combined_db)}")
-
-        # **清空 `data_store`**
-        data_store = pd.DataFrame(columns=data_columns)
-        print("Temporary data cleared.")
+        daily_db = pd.concat([daily_db, daily_usage], ignore_index=True)
+        daily_db.to_csv(DAILY_USAGE_FILE, index=False)
+        print(f"Daily usage saved for {today_str}")
 
     except Exception as e:
-        print(f"Error saving data: {e}")
+        print(f"Error saving daily usage: {e}")
 
-# **定期检查是否到凌晨 00:00 - 00:59 进行数据维护**
+# **归档 `data_store` 数据**
+def archive_data():
+    data_store = load_data_store()
+    
+    if data_store.empty:
+        print("No data to archive.")
+        return
+
+    try:
+        # 追加数据到 `local_db.csv`
+        data_store.to_csv(LOCAL_DB_FILE, mode='a', header=False, index=False)
+        print("Data archived successfully.")
+
+        # 计算日用电量
+        calculate_daily_usage(data_store)
+
+        # **清空 `local_db.csv`，准备新一天的数据**
+        pd.DataFrame(columns=data_columns).to_csv(LOCAL_DB_FILE, index=False)
+        print("local_db.csv reset for new day.")
+
+    except Exception as e:
+        print(f"Error archiving data: {e}")
+
+# **每天 00:00 - 00:59 进行数据归档**
 def maintenance_scheduler():
     while True:
         current_time = datetime.now().strftime("%H:%M")
-        
-        # 检查是否在 00:00 - 00:59 之间
         if "00:00" <= current_time <= "00:59":
             print("Midnight maintenance started...")
-            save_data_to_csv()
-            time.sleep(60)  # 每分钟执行一次，确保在 00:59 前多次存储数据
+            archive_data()
+            time.sleep(60)
 
-        time.sleep(10)  # 每 10 秒检查一次当前时间
+        time.sleep(10)
 
-# **使用 `threading` 启动后台数据维护任务**
+# **启动线程**
 def start_maintenance_thread():
     maintenance_thread = threading.Thread(target=maintenance_scheduler, daemon=True)
     maintenance_thread.start()
     print("Data maintenance thread started.")
 
 if __name__ == "__main__":
-    load_local_db()
     start_maintenance_thread()
 
     # **让主线程保持运行**

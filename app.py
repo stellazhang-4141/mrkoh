@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 import threading
 from datetime import datetime
-from data_maintainance import save_data_to_csv
+from data_maintainance import archive_data
 
 
 app = Flask(__name__)
@@ -111,9 +111,7 @@ def scheduled_task():
         current_time = datetime.now()
         if current_time.hour == 0:  # 00:00 触发
             print(f"Running data maintenance at {current_time}")
-            save_data_to_csv()  # 存储数据
-            global data_store
-            data_store = pd.DataFrame(columns=["meter_id", "time", "reading"])  # 清空临时数据
+            archive_data()  # 数据归档
             time.sleep(60)  # 避免多次触发，暂停 1 分钟
         time.sleep(600)  # 每 10 分钟检查一次
 
