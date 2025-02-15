@@ -4,6 +4,9 @@ from datetime import datetime
 import random
 from concurrent.futures import ThreadPoolExecutor
 import time
+import threading
+from datetime import datetime
+from data_maintainance import save_data_to_csv
 
 
 app = Flask(__name__)
@@ -35,6 +38,8 @@ dwelling_types = [
 ]
 
 regions = ["Central", "East", "West", "North"]
+
+
 
 # Function to save meter_id, time, and reading to a local CSV file as DataFrame
 def generate_unique_meter_id():
@@ -99,6 +104,22 @@ def store_data_in_df(data):
 
     #假设数据会被存储到文件或数据库,测试用
     #data_store.to_csv('local_db.csv', index=False) 
+
+# **后台线程：每天 00:00 - 00:59 自动存储数据**
+def scheduled_task():
+    while True:
+        current_time = datetime.now()
+        if current_time.hour == 0:  # 00:00 触发
+            print(f"Running data maintenance at {current_time}")
+            save_data_to_csv()  # 存储数据
+            global data_store
+            data_store = pd.DataFrame(columns=["meter_id", "time", "reading"])  # 清空临时数据
+            time.sleep(60)  # 避免多次触发，暂停 1 分钟
+        time.sleep(600)  # 每 10 分钟检查一次
+
+# 启动后台线程
+maintenance_thread = threading.Thread(target=scheduled_task, daemon=True)
+maintenance_thread.start()
 
 @app.route('/')
 def index():
