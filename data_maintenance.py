@@ -10,14 +10,7 @@ data_columns = ["meter_id", "time", "reading"]
 LOCAL_DB_FILE = "local_db.csv"
 DAILY_USAGE_FILE = "daily_usage.csv"
 
-# **读取 `local_db.csv`（如果文件不存在，则创建）**
-try:
-    local_db = pd.read_csv(LOCAL_DB_FILE)
-except FileNotFoundError:
-    local_db = pd.DataFrame(columns=data_columns)
-    local_db.to_csv(LOCAL_DB_FILE, index=False)
-
-# **加载 `meter_reading.py` 里的数据**
+# **加载 `local_db.csv`**
 def load_data_store():
     try:
         return pd.read_csv(LOCAL_DB_FILE)
@@ -49,40 +42,46 @@ def calculate_daily_usage(data_store):
 
         daily_db = pd.concat([daily_db, daily_usage], ignore_index=True)
         daily_db.to_csv(DAILY_USAGE_FILE, index=False)
-        print(f"Daily usage saved for {today_str}")
+        print(f" Daily usage saved for {today_str}")
 
     except Exception as e:
-        print(f"Error saving daily usage: {e}")
+        print(f" Error saving daily usage: {e}")
 
 # **归档 `data_store` 数据**
 def archive_data():
     data_store = load_data_store()
     
     if data_store.empty:
-        print("No data to archive.")
+        print(" No unarchived data found.")
         return
 
     try:
-        # 追加数据到 `local_db.csv`
-        data_store.to_csv(LOCAL_DB_FILE, mode='a', header=False, index=False)
-        print("Data archived successfully.")
-
         # 计算日用电量
         calculate_daily_usage(data_store)
 
         # **清空 `local_db.csv`，准备新一天的数据**
         pd.DataFrame(columns=data_columns).to_csv(LOCAL_DB_FILE, index=False)
-        print("local_db.csv reset for new day.")
+        print(" local_db.csv reset for new day.")
 
     except Exception as e:
-        print(f"Error archiving data: {e}")
+        print(f" Error archiving data: {e}")
+
+# **开机时检查是否有未归档数据，并执行归档**
+def check_and_archive_on_startup():
+    data_store = load_data_store()
+    
+    if not data_store.empty:
+        print(" Startup check: Unarchived data found. Archiving now...")
+        archive_data()
+    else:
+        print(" Startup check: No unarchived data found.")
 
 # **每天 00:00 - 00:59 进行数据归档**
 def maintenance_scheduler():
     while True:
         current_time = datetime.now().strftime("%H:%M")
         if "00:00" <= current_time <= "00:59":
-            print("Midnight maintenance started...")
+            print(" Midnight maintenance started...")
             archive_data()
             time.sleep(60)
 
@@ -92,10 +91,14 @@ def maintenance_scheduler():
 def start_maintenance_thread():
     maintenance_thread = threading.Thread(target=maintenance_scheduler, daemon=True)
     maintenance_thread.start()
-    print("Data maintenance thread started.")
+    print("🛠️ Data maintenance thread started.")
 
+# **程序入口**
 if __name__ == "__main__":
-    start_maintenance_thread()
+    print(" System startup: Checking for unarchived data...")
+    check_and_archive_on_startup()  #  开机后立即检查并归档
+    
+    start_maintenance_thread()  # 继续保留定时维护线程
 
     # **让主线程保持运行**
     while True:

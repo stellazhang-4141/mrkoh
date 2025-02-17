@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 import threading
 from datetime import datetime
-from data_maintainance import archive_data
+from data_maintenance import archive_data
 
 
 app = Flask(__name__)

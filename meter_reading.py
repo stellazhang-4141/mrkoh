@@ -32,7 +32,7 @@ def store_data_in_df(data):
     print(f"Data stored successfully!")
 
     #假设数据会被存储到文件或数据库,测试用
-    #data_store.to_csv('local_db.csv', index=False)  
+    data_store.to_csv('local_db.csv', index=False)  
 
 
 
