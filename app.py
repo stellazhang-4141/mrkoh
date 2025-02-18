@@ -7,6 +7,7 @@ import time
 import threading
 from datetime import datetime
 from data_maintenance import archive_data
+import os 
 
 
 app = Flask(__name__)
@@ -102,8 +103,18 @@ def store_data_in_df(data):
     data_store = pd.concat([data_store, data], ignore_index=True)
     print(f"Data stored successfully!")
 
-    #假设数据会被存储到文件或数据库,测试用
-    #data_store.to_csv('local_db.csv', index=False) 
+    if os.path.exists('local_db.csv'):
+        # Read existing CSV file
+        d = pd.read_csv('local_db.csv')
+        # Append new data
+        data_new = pd.concat([d, data_store], ignore_index=True)
+    else:
+        # Create new DataFrame if file doesn't exist
+        data_new =data_store
+
+    data_new .to_csv('local_db.csv', index=False)
+
+
 
 # **后台线程：每天 00:00 - 00:59 自动存储数据**
 def scheduled_task():
