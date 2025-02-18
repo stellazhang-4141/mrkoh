@@ -40,7 +40,8 @@ dwelling_types = [
 
 regions = ["Central", "East", "West", "North"]
 
-
+METER_CSV_PATH = 'meter_id.csv'
+LOCAL_DB_FILE = "local_db.csv"
 
 # Function to save meter_id, time, and reading to a local CSV file as DataFrame
 def generate_unique_meter_id():
@@ -58,7 +59,6 @@ data_store = pd.DataFrame(columns=data_columns)
 
 #读取本地database为dataframe
 local_db = pd.read_csv('local_db.csv')
-
 
 
 def save_meter_id_to_csv(meter_id, reading):
