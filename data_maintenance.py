@@ -3,21 +3,21 @@ import time
 import threading
 from datetime import datetime
 
-# 定义数据列
+# 定义数据格式
 data_columns = ["meter_id", "time", "reading"]
 
-# 文件路径
+# 文件
 LOCAL_DB_FILE = "local_db.csv"
 DAILY_USAGE_FILE = "daily_usage.csv"
 
-# **加载 `local_db.csv`**
+# 加载 `local_db.csv`
 def load_data_store():
     try:
         return pd.read_csv(LOCAL_DB_FILE)
     except FileNotFoundError:
         return pd.DataFrame(columns=data_columns)
 
-# **计算当天总用电量**
+# 计算当天总用电量
 def calculate_daily_usage(data_store):
     if data_store.empty:
         print("No data available for daily usage calculation.")
@@ -47,7 +47,7 @@ def calculate_daily_usage(data_store):
     except Exception as e:
         print(f" Error saving daily usage: {e}")
 
-# **归档 `data_store` 数据**
+# 归档 `data_store` 数据
 def archive_data():
     data_store = load_data_store()
     
@@ -59,14 +59,14 @@ def archive_data():
         # 计算日用电量
         calculate_daily_usage(data_store)
 
-        # **清空 `local_db.csv`，准备新一天的数据**
+        # 清空 `local_db.csv`，准备新一天的数据
         pd.DataFrame(columns=data_columns).to_csv(LOCAL_DB_FILE, index=False)
         print(" local_db.csv reset for new day.")
 
     except Exception as e:
         print(f" Error archiving data: {e}")
 
-# **开机时检查是否有未归档数据，并执行归档**
+# 开机时检查是否有未归档数据，并执行归档
 def check_and_archive_on_startup():
     data_store = load_data_store()
     
@@ -76,7 +76,7 @@ def check_and_archive_on_startup():
     else:
         print(" Startup check: No unarchived data found.")
 
-# **每天 00:00 - 00:59 进行数据归档**
+# 每天 00:00 - 00:59 进行数据归档
 def maintenance_scheduler():
     while True:
         current_time = datetime.now().strftime("%H:%M")
@@ -87,19 +87,18 @@ def maintenance_scheduler():
 
         time.sleep(10)
 
-# **启动线程**
+# 启动线程
 def start_maintenance_thread():
     maintenance_thread = threading.Thread(target=maintenance_scheduler, daemon=True)
     maintenance_thread.start()
     print("🛠️ Data maintenance thread started.")
 
-# **程序入口**
+#  系统维护时间+开机后可检查并归档
 if __name__ == "__main__":
     print(" System startup: Checking for unarchived data...")
-    check_and_archive_on_startup()  #  开机后立即检查并归档
+    check_and_archive_on_startup()  
     
-    start_maintenance_thread()  # 继续保留定时维护线程
+    start_maintenance_thread() 
 
-    # **让主线程保持运行**
     while True:
         time.sleep(3600)
