@@ -1,0 +1,3 @@
+username,meter_id,dwelling_type,region,area,community,unit,floor,email,tel,reading,time
+A,123456789,3-room,Central,Lakeside,Lakeshore,3A,7,ZHAN0690@e.ntu.edu.sg,87416720,125,2025-02-19 00:00:00
+A,987654321,1-room / 2-room,Central,Lakeside,Lakeshore,3A,7,ZHAN0690@e.ntu.edu.sg,87416720,139,2025-02-19 00:00:00

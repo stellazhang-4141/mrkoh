@@ -1,0 +1,149 @@
+2025-02-19 01:32:09,275 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 01:32:09,275 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 01:32:09,276 - INFO -  * Restarting with stat
+2025-02-19 01:32:09,699 - WARNING -  * Debugger is active!
+2025-02-19 01:32:09,708 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 01:32:18,895 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:32:18', 'Args': {}, 'Data': {}}
+2025-02-19 01:32:18,903 - INFO - 127.0.0.1 - - [19/Feb/2025 01:32:18] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-19 01:32:19,254 - INFO - 127.0.0.1 - - [19/Feb/2025 01:32:19] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-02-19 01:32:19,255 - INFO - 127.0.0.1 - - [19/Feb/2025 01:32:19] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-02-19 01:32:19,689 - INFO - 127.0.0.1 - - [19/Feb/2025 01:32:19] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=4ldATREnpDgBnOP7TF7Q HTTP/1.1" 200 -
+2025-02-19 01:32:19,690 - INFO - 127.0.0.1 - - [19/Feb/2025 01:32:19] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-02-19 01:32:19,943 - INFO - 127.0.0.1 - - [19/Feb/2025 01:32:19] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-19 01:34:04,964 - INFO -  * Detected change in '/workspaces/mrkoh/add_user.py', reloading
+2025-02-19 01:34:05,056 - INFO -  * Restarting with stat
+2025-02-19 01:34:05,765 - WARNING -  * Debugger is active!
+2025-02-19 01:34:05,766 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 01:40:31,124 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 01:40:31,125 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 01:40:31,125 - INFO -  * Restarting with stat
+2025-02-19 01:40:31,549 - WARNING -  * Debugger is active!
+2025-02-19 01:40:31,549 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 01:40:36,064 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:40:36', 'Args': {}, 'Data': {}}
+2025-02-19 01:40:36,070 - INFO - 127.0.0.1 - - [19/Feb/2025 01:40:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-19 01:40:36,421 - INFO - 127.0.0.1 - - [19/Feb/2025 01:40:36] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-19 01:40:36,429 - INFO - 127.0.0.1 - - [19/Feb/2025 01:40:36] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-19 01:40:36,826 - INFO - 127.0.0.1 - - [19/Feb/2025 01:40:36] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=siTrJLoQjxP7LSI8soKW HTTP/1.1" 200 -
+2025-02-19 01:40:36,864 - INFO - 127.0.0.1 - - [19/Feb/2025 01:40:36] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-19 01:46:47,018 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 01:46:47,018 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 01:46:47,019 - INFO -  * Restarting with stat
+2025-02-19 01:46:47,454 - WARNING -  * Debugger is active!
+2025-02-19 01:46:47,454 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 01:46:56,325 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:46:56', 'Args': {}, 'Data': {}}
+2025-02-19 01:46:56,330 - INFO - 127.0.0.1 - - [19/Feb/2025 01:46:56] "GET / HTTP/1.1" 200 -
+2025-02-19 01:46:57,017 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/favicon.ico', 'Time': '2025-02-19 01:46:57', 'Args': {}, 'Data': {}}
+2025-02-19 01:46:57,018 - INFO - 127.0.0.1 - - [19/Feb/2025 01:46:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-19 01:46:58,941 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/register', 'Time': '2025-02-19 01:46:58', 'Args': {}, 'Data': {}}
+2025-02-19 01:46:58,944 - INFO - 127.0.0.1 - - [19/Feb/2025 01:46:58] "GET /register HTTP/1.1" 200 -
+2025-02-19 01:47:32,470 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/register', 'Time': '2025-02-19 01:47:32', 'Args': {}, 'Data': {'username': 'A', 'meter_id': '123456789', 'dwelling_type': '3-room', 'region': 'Central', 'area': 'Lakeside', 'community': 'Lakeshore', 'unit': '3A', 'floor': '7', 'email': 'ZHAN0690@e.ntu.edu.sg', 'tel': '87416720'}}
+2025-02-19 01:47:32,492 - INFO - 127.0.0.1 - - [19/Feb/2025 01:47:32] "POST /register HTTP/1.1" 200 -
+2025-02-19 01:47:35,166 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:47:35', 'Args': {}, 'Data': {}}
+2025-02-19 01:47:35,166 - INFO - 127.0.0.1 - - [19/Feb/2025 01:47:35] "GET / HTTP/1.1" 200 -
+2025-02-19 01:47:36,946 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/meterreading', 'Time': '2025-02-19 01:47:36', 'Args': {}, 'Data': {}}
+2025-02-19 01:47:36,946 - INFO - 127.0.0.1 - - [19/Feb/2025 01:47:36] "GET /meterreading HTTP/1.1" 200 -
+2025-02-19 01:47:58,585 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:47:58', 'Args': {}, 'Data': {'meter_id': '123456789', 'time': '2025-01-25T03:30', 'reading': 59}}
+2025-02-19 01:47:58,590 - INFO - 127.0.0.1 - - [19/Feb/2025 01:47:58] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:48:15,071 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:48:15', 'Args': {}, 'Data': {'meter_id': '123456789', 'time': '2025-01-25T21:30', 'reading': 125}}
+2025-02-19 01:48:15,076 - INFO - 127.0.0.1 - - [19/Feb/2025 01:48:15] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:49:05,889 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 01:49:05,889 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 01:49:05,890 - INFO -  * Restarting with stat
+2025-02-19 01:49:06,339 - WARNING -  * Debugger is active!
+2025-02-19 01:49:06,339 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 01:49:08,144 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:49:08', 'Args': {}, 'Data': {}}
+2025-02-19 01:49:08,148 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:08] "GET / HTTP/1.1" 200 -
+2025-02-19 01:49:10,164 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/register', 'Time': '2025-02-19 01:49:10', 'Args': {}, 'Data': {}}
+2025-02-19 01:49:10,173 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:10] "GET /register HTTP/1.1" 200 -
+2025-02-19 01:49:22,765 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/register', 'Time': '2025-02-19 01:49:22', 'Args': {}, 'Data': {'username': 'A', 'meter_id': '987654321', 'dwelling_type': '1-room / 2-room', 'region': 'Central', 'area': 'Lakeside', 'community': 'Lakeshore', 'unit': '3A', 'floor': '7', 'email': 'ZHAN0690@e.ntu.edu.sg', 'tel': '87416720'}}
+2025-02-19 01:49:22,776 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:22] "POST /register HTTP/1.1" 200 -
+2025-02-19 01:49:24,639 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:49:24', 'Args': {}, 'Data': {}}
+2025-02-19 01:49:24,640 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:24] "GET / HTTP/1.1" 200 -
+2025-02-19 01:49:26,978 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/meterreading', 'Time': '2025-02-19 01:49:26', 'Args': {}, 'Data': {}}
+2025-02-19 01:49:26,978 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:26] "GET /meterreading HTTP/1.1" 200 -
+2025-02-19 01:49:45,018 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:49:45', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T03:30', 'reading': 25}}
+2025-02-19 01:49:45,023 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:45] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:49:51,881 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:49:51', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T05:30', 'reading': 34}}
+2025-02-19 01:49:51,887 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:51] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:49:59,579 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:49:59', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T21:30', 'reading': 78}}
+2025-02-19 01:49:59,583 - INFO - 127.0.0.1 - - [19/Feb/2025 01:49:59] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:50:09,338 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:50:09', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-02T18:30', 'reading': 125}}
+2025-02-19 01:50:09,342 - INFO - 127.0.0.1 - - [19/Feb/2025 01:50:09] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:52:26,194 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 01:52:26,194 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 01:52:26,195 - INFO -  * Restarting with stat
+2025-02-19 01:52:26,628 - WARNING -  * Debugger is active!
+2025-02-19 01:52:26,628 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 01:52:30,096 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:52:30', 'Args': {}, 'Data': {}}
+2025-02-19 01:52:30,100 - INFO - 127.0.0.1 - - [19/Feb/2025 01:52:30] "GET / HTTP/1.1" 200 -
+2025-02-19 01:52:32,489 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/register', 'Time': '2025-02-19 01:52:32', 'Args': {}, 'Data': {}}
+2025-02-19 01:52:32,493 - INFO - 127.0.0.1 - - [19/Feb/2025 01:52:32] "GET /register HTTP/1.1" 200 -
+2025-02-19 01:52:36,333 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/register', 'Time': '2025-02-19 01:52:36', 'Args': {}, 'Data': {'username': 'A', 'meter_id': '987654321', 'dwelling_type': '1-room / 2-room', 'region': 'Central', 'area': 'Lakeside', 'community': 'Lakeshore', 'unit': '3A', 'floor': '7', 'email': 'ZHAN0690@e.ntu.edu.sg', 'tel': '87416720'}}
+2025-02-19 01:52:36,334 - INFO - 127.0.0.1 - - [19/Feb/2025 01:52:36] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-02-19 01:52:40,353 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:52:40', 'Args': {}, 'Data': {}}
+2025-02-19 01:52:40,353 - INFO - 127.0.0.1 - - [19/Feb/2025 01:52:40] "GET / HTTP/1.1" 200 -
+2025-02-19 01:52:42,265 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/meterreading', 'Time': '2025-02-19 01:52:42', 'Args': {}, 'Data': {}}
+2025-02-19 01:52:42,266 - INFO - 127.0.0.1 - - [19/Feb/2025 01:52:42] "GET /meterreading HTTP/1.1" 200 -
+2025-02-19 01:52:58,129 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:52:58', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T15:30', 'reading': 46}}
+2025-02-19 01:52:58,133 - INFO - 127.0.0.1 - - [19/Feb/2025 01:52:58] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:53:09,414 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:53:09', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T21:30', 'reading': 120}}
+2025-02-19 01:53:09,418 - INFO - 127.0.0.1 - - [19/Feb/2025 01:53:09] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:57:53,454 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 01:57:53,454 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 01:57:53,454 - INFO -  * Restarting with stat
+2025-02-19 01:57:53,879 - WARNING -  * Debugger is active!
+2025-02-19 01:57:53,879 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 01:58:00,355 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:58:00', 'Args': {}, 'Data': {}}
+2025-02-19 01:58:00,359 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:00] "GET / HTTP/1.1" 200 -
+2025-02-19 01:58:02,381 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/register', 'Time': '2025-02-19 01:58:02', 'Args': {}, 'Data': {}}
+2025-02-19 01:58:02,385 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:02] "GET /register HTTP/1.1" 200 -
+2025-02-19 01:58:05,755 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/register', 'Time': '2025-02-19 01:58:05', 'Args': {}, 'Data': {'username': 'A', 'meter_id': '987654321', 'dwelling_type': '1-room / 2-room', 'region': 'Central', 'area': 'Lakeside', 'community': 'Lakeshore', 'unit': '3A', 'floor': '7', 'email': 'ZHAN0690@e.ntu.edu.sg', 'tel': '87416720'}}
+2025-02-19 01:58:05,756 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:05] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-02-19 01:58:09,495 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 01:58:09', 'Args': {}, 'Data': {}}
+2025-02-19 01:58:09,496 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:09] "GET / HTTP/1.1" 200 -
+2025-02-19 01:58:11,268 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/meterreading', 'Time': '2025-02-19 01:58:11', 'Args': {}, 'Data': {}}
+2025-02-19 01:58:11,269 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:11] "GET /meterreading HTTP/1.1" 200 -
+2025-02-19 01:58:24,892 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:58:24', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T03:30', 'reading': 46}}
+2025-02-19 01:58:24,899 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:24] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:58:34,575 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:58:34', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-02T03:30', 'reading': 59}}
+2025-02-19 01:58:34,579 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:34] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 01:58:41,050 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 01:58:41', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-02T21:30', 'reading': 128}}
+2025-02-19 01:58:41,055 - INFO - 127.0.0.1 - - [19/Feb/2025 01:58:41] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 02:02:19,345 - INFO -  * Detected change in '/workspaces/mrkoh/data_maintenance.py', reloading
+2025-02-19 02:02:19,420 - INFO -  * Restarting with stat
+2025-02-19 02:02:19,895 - WARNING -  * Debugger is active!
+2025-02-19 02:02:19,896 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 02:08:44,293 - INFO -  * Detected change in '/workspaces/mrkoh/data_maintenance.py', reloading
+2025-02-19 02:08:44,355 - INFO -  * Restarting with stat
+2025-02-19 02:08:44,851 - WARNING -  * Debugger is active!
+2025-02-19 02:08:44,851 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 02:09:22,307 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 02:09:22', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-02T18:30', 'reading': 125}}
+2025-02-19 02:09:22,310 - INFO - 127.0.0.1 - - [19/Feb/2025 02:09:22] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 02:09:31,573 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 02:09:31', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-02T21:30', 'reading': 128}}
+2025-02-19 02:09:31,577 - INFO - 127.0.0.1 - - [19/Feb/2025 02:09:31] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 02:18:00,268 - INFO -  * Detected change in '/workspaces/mrkoh/app.py', reloading
+2025-02-19 02:18:00,331 - INFO -  * Restarting with stat
+2025-02-19 02:18:16,106 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 02:18:16,106 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 02:18:16,107 - INFO -  * Restarting with stat
+2025-02-19 02:18:16,603 - WARNING -  * Debugger is active!
+2025-02-19 02:18:16,603 - INFO -  * Debugger PIN: 549-594-692
+2025-02-19 02:18:20,587 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 02:18:20', 'Args': {}, 'Data': {}}
+2025-02-19 02:18:20,591 - INFO - 127.0.0.1 - - [19/Feb/2025 02:18:20] "GET / HTTP/1.1" 200 -
+2025-02-19 02:18:22,948 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/query_usage', 'Time': '2025-02-19 02:18:22', 'Args': {}, 'Data': {}}
+2025-02-19 02:18:22,952 - INFO - 127.0.0.1 - - [19/Feb/2025 02:18:22] "GET /query_usage HTTP/1.1" 200 -
+2025-02-19 02:18:25,465 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 02:18:25', 'Args': {}, 'Data': {}}
+2025-02-19 02:18:25,465 - INFO - 127.0.0.1 - - [19/Feb/2025 02:18:25] "GET / HTTP/1.1" 200 -
+2025-02-19 02:18:27,128 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/meterreading', 'Time': '2025-02-19 02:18:27', 'Args': {}, 'Data': {}}
+2025-02-19 02:18:27,128 - INFO - 127.0.0.1 - - [19/Feb/2025 02:18:27] "GET /meterreading HTTP/1.1" 200 -
+2025-02-19 02:19:03,224 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 02:19:03', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T21:30', 'reading': 123}}
+2025-02-19 02:19:03,234 - INFO - 127.0.0.1 - - [19/Feb/2025 02:19:03] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 02:19:13,649 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 02:19:13', 'Args': {}, 'Data': {'meter_id': '987654321', 'time': '2025-01-01T23:30', 'reading': 139}}
+2025-02-19 02:19:13,654 - INFO - 127.0.0.1 - - [19/Feb/2025 02:19:13] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -

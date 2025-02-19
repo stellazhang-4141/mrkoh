@@ -97,7 +97,7 @@ def maintenance_scheduler():
 def start_maintenance_thread():
     maintenance_thread = threading.Thread(target=maintenance_scheduler, daemon=True)
     maintenance_thread.start()
-    print("🛠️ Data maintenance thread started.")
+    print(" Data maintenance thread started.")
 
 #  系统维护时间+开机后可检查并归档
 if __name__ == "__main__":
