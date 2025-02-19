@@ -1,14 +1,15 @@
+#可以运行但会记录两次
 import pandas as pd
 import time
 import threading
 from datetime import datetime
 datetime.now().strftime("%H:%M")
-# 定义数据格式
-data_columns = ["meter_id", "time", "reading"]
-
-
 import pandas as pd
 import os
+# 定义数据格式
+
+data_columns = ["meter_id", "time", "reading"]
+
 
 current_dir = os.path.dirname(os.path.abspath(__file__))  # 获取当前Python文件的目录
 LOCAL_DB_FILE = os.path.join(current_dir, "local_db.csv")
@@ -27,31 +28,32 @@ def calculate_daily_usage(data_store):
         print("No data available for daily usage calculation.")
         return
 
-
     data_store["time"] = pd.to_datetime(data_store["time"])
     today_str = datetime.now().strftime("%Y-%m-%d")
-    today_data = data_store[data_store["time"].dt.strftime("%Y-%m-%d") == today_str]
 
+    # 获取今天的最新一条数据
+    today_data = data_store[data_store["time"].dt.strftime("%Y-%m-%d") == today_str]
     if today_data.empty:
         print("No records found for today.")
         return
+    latest_today = today_data.sort_values("time").groupby("meter_id").last().reset_index()
 
-    daily_usage = today_data.groupby("meter_id")["reading"].sum().reset_index()
-    daily_usage["date"] = today_str
+    # 仅保留 `meter_id`、`date`、`reading`
+    latest_today = latest_today[["meter_id", "time", "reading"]]
+    latest_today.rename(columns={"time": "date"}, inplace=True)
 
     try:
-        try:
-            daily_db = pd.read_csv(DAILY_USAGE_FILE)
-        except FileNotFoundError:
-            daily_db = pd.DataFrame(columns=["meter_id", "date", "reading"])
+        daily_db = pd.read_csv(DAILY_USAGE_FILE)
+    except FileNotFoundError:
+        daily_db = pd.DataFrame(columns=["meter_id", "date", "reading"])
 
-        daily_db = pd.concat([daily_db, daily_usage], ignore_index=True)
-        daily_db.to_csv(DAILY_USAGE_FILE, index=False)
+    # 先删除今天的旧记录，再追加新记录
+    daily_db = daily_db[daily_db["date"] != today_str]
+    daily_db = pd.concat([daily_db, latest_today], ignore_index=True)
+    daily_db.to_csv(DAILY_USAGE_FILE, index=False)
 
-        print(f" Daily usage saved for {today_str}")
+    print(f" Daily latest reading saved for {today_str}")
 
-    except Exception as e:
-        print(f" Error saving daily usage: {e}")
 
 # 归档 `data_store` 数据
 def archive_data():
@@ -64,9 +66,8 @@ def archive_data():
         # 计算日用电量
         calculate_daily_usage(data_store)
 
-        # 清空 `local_db.csv`，准备新一天的数据
-        pd.DataFrame(columns=data_columns).to_csv(LOCAL_DB_FILE, index=False)
-        print(" local_db.csv reset for new day.")
+        # 仅清空 data_store，不清空 local_db.csv
+        print(" Data store cleared after archiving.")
 
     except Exception as e:
         print(f" Error archiving data: {e}")
@@ -84,8 +85,8 @@ def check_and_archive_on_startup():
 # 每天 00:00 - 00:59 进行数据归档
 def maintenance_scheduler():
     while True:
-        #current_time = datetime.now().strftime("%H:%M")
-        current_time = "01:00"
+        #current_time = "01:00"
+        current_time = datetime.now().strftime("%H:%M")
         if "00:00" <= current_time <= "00:59":
             print(" Midnight maintenance started...")
             archive_data()
