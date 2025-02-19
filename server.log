@@ -285,3 +285,25 @@
 2025-02-19 11:05:26,808 - INFO - 127.0.0.1 - - [19/Feb/2025 11:05:26] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
 2025-02-19 11:05:33,027 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 11:05:33', 'Args': {}, 'Data': {'meter_id': '414414414', 'time': '2025-02-19T15:30', 'reading': 39}}
 2025-02-19 11:05:33,034 - INFO - 127.0.0.1 - - [19/Feb/2025 11:05:33] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 11:11:38,772 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-02-19 11:11:38,773 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-19 11:11:38,773 - INFO -  * Restarting with stat
+2025-02-19 11:11:39,365 - WARNING -  * Debugger is active!
+2025-02-19 11:11:39,366 - INFO -  * Debugger PIN: 236-569-344
+2025-02-19 11:11:41,695 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 11:11:41', 'Args': {}, 'Data': {}}
+2025-02-19 11:11:41,699 - INFO - 127.0.0.1 - - [19/Feb/2025 11:11:41] "GET / HTTP/1.1" 200 -
+2025-02-19 11:11:46,137 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/register', 'Time': '2025-02-19 11:11:46', 'Args': {}, 'Data': {}}
+2025-02-19 11:11:46,143 - INFO - 127.0.0.1 - - [19/Feb/2025 11:11:46] "GET /register HTTP/1.1" 200 -
+2025-02-19 11:11:57,268 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/register', 'Time': '2025-02-19 11:11:57', 'Args': {}, 'Data': {'username': 'A', 'meter_id': '212212212', 'dwelling_type': '1-room / 2-room', 'region': 'Central', 'area': 'Lakeside', 'community': 'Lakeshore', 'unit': '3A', 'floor': '7', 'email': 'ZHAN0690@e.ntu.edu.sg', 'tel': '87416720'}}
+2025-02-19 11:11:57,277 - INFO - 127.0.0.1 - - [19/Feb/2025 11:11:57] "POST /register HTTP/1.1" 200 -
+2025-02-19 11:11:59,236 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/', 'Time': '2025-02-19 11:11:59', 'Args': {}, 'Data': {}}
+2025-02-19 11:11:59,237 - INFO - 127.0.0.1 - - [19/Feb/2025 11:11:59] "GET / HTTP/1.1" 200 -
+2025-02-19 11:12:00,596 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/query_usage', 'Time': '2025-02-19 11:12:00', 'Args': {}, 'Data': {}}
+2025-02-19 11:12:00,598 - INFO - 127.0.0.1 - - [19/Feb/2025 11:12:00] "GET /query_usage HTTP/1.1" 200 -
+2025-02-19 11:12:02,750 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'GET', 'Path': '/meterreading', 'Time': '2025-02-19 11:12:02', 'Args': {}, 'Data': {}}
+2025-02-19 11:12:02,750 - INFO - 127.0.0.1 - - [19/Feb/2025 11:12:02] "GET /meterreading HTTP/1.1" 200 -
+2025-02-19 11:12:15,982 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 11:12:15', 'Args': {}, 'Data': {'meter_id': '212212212', 'time': '2025-02-19T03:30', 'reading': 91}}
+2025-02-19 11:12:15,990 - INFO - 127.0.0.1 - - [19/Feb/2025 11:12:15] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
+2025-02-19 11:12:23,721 - INFO - Request: {'IP': '127.0.0.1', 'Method': 'POST', 'Path': '/meterreading', 'Time': '2025-02-19 11:12:23', 'Args': {}, 'Data': {'meter_id': '212212212', 'time': '2025-02-19T15:30', 'reading': 128}}
+2025-02-19 11:12:23,725 - INFO - 127.0.0.1 - - [19/Feb/2025 11:12:23] "[35m[1mPOST /meterreading HTTP/1.1[0m" 201 -
